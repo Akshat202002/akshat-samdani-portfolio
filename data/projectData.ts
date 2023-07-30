@@ -1,12 +1,12 @@
 export const projectsList = [
   {
-    title: 'Smata',
-    imageLight: '/assets/images/projects/cover/smata.png',
+    title: 'LastMinuteTickets',
+    imageLight: '/assets/images/projects/cover/lastminutetickets.png',
     blurHash: 'L4ADc400P*Zi4Tu1y;Qo00pH#YXl',
-    site: 'https://smata.com/',
+    site: 'https://ticket-resale-app-c43ef.web.app/',
     description:
-      'SMATA IS AN ALL-IN-ONE CLOUD-BASED SOLUTION, INTEGRATING MANAGEMENT, COMMUNICATION & ACCOUNTING FUNCTIONS.',
-    techStack: ['Rails', 'React', 'Javascript']
+      'Last Minute Tickets is an all-in-one platform that facilitates seamless buying and selling of event tickets for users facing immediate changes in plans.',
+    techStack: ['Firebase', 'React', 'Redux', 'Reducers']
   },
   {
     title: 'Peterpitch',

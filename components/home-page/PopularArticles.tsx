@@ -56,6 +56,8 @@ const PopularArticles: React.FC<BlogPostProps> = (props) => {
       <Header underlineColor={ORANGE} mt={0} mb={0}>
         Popular Articles
       </Header>
+      console.log("posts", posts);
+      
       <SimpleGrid columns={1} spacing={4} mt={5} w="100%">
         {posts &&
           posts
