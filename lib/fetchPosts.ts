@@ -20,13 +20,11 @@ type PostsPayload = {
 async function getPosts(): Promise<PostsPayload> {
   const res = await fetch(API_URL);
   const data = await res.json();
-  console.log("res2", data);
   return data;
 }
 
 export const getDbPosts = () => {
   const { data, error, mutate } = useSWR(API_URL, getPosts)
-  console.log("data", data)
   return {
     dbPosts: data?.dbPosts,
     isLoading: !error && !data,
@@ -35,16 +33,29 @@ export const getDbPosts = () => {
 }
 
 export const getDevtoPosts = async () => {
-  const res = await fetch(
-    `${DEVTO_API_URL}/articles?username=${process.env.DEVTO_USERNAME}`
-  )
-  console.log("res",res)
-  if (res.status < 200 || res.status >= 300) {
-    throw new Error(
-      `Error fetching... Status code: ${res.status}, ${res.statusText}`
-    )
+  try {
+    const res = await fetch(
+      `${DEVTO_API_URL}/articles/me`, {
+      headers: {
+        "api-key": process.env.DEVTO_APIKEY,
+      },
+    });
+
+    if (res.status < 200 || res.status >= 300) {
+      throw new Error(
+        `Error fetching... Status code: ${res.status}, ${res.statusText}`
+      );
+    }
+
+    const dev_posts = await res.json();
+    return dev_posts;
+  } catch (error) {
+    console.error("Error fetching Dev.to posts:", error);
+    throw error;
   }
-  const dev_posts = await res.json()
-  console.log("dev_posts",dev_posts)
-  return dev_posts
 }
+
+
+
+
+
