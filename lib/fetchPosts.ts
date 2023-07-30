@@ -20,13 +20,13 @@ type PostsPayload = {
 async function getPosts(): Promise<PostsPayload> {
   const res = await fetch(API_URL);
   const data = await res.json();
-  // console.log("res2", data);
+  console.log("res2", data);
   return data;
 }
 
 export const getDbPosts = () => {
   const { data, error, mutate } = useSWR(API_URL, getPosts)
-  // console.log("data", data)
+  console.log("data", data)
   return {
     dbPosts: data?.dbPosts,
     isLoading: !error && !data,
@@ -36,11 +36,7 @@ export const getDbPosts = () => {
 
 export const getDevtoPosts = async () => {
   const res = await fetch(
-    `https://dev.to/api/articles/me`, {
-    headers: {
-      "api-key": process.env.DEVTO_APIKEY,
-    },
-}
+    `${DEVTO_API_URL}/articles?username=${process.env.DEVTO_USERNAME}`
   )
   console.log("res",res)
   if (res.status < 200 || res.status >= 300) {
@@ -49,6 +45,6 @@ export const getDevtoPosts = async () => {
     )
   }
   const dev_posts = await res.json()
-  // console.log("dev_posts",dev_posts)
+  console.log("dev_posts",dev_posts)
   return dev_posts
 }
