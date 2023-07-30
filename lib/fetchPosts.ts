@@ -26,7 +26,7 @@ async function getPosts(): Promise<PostsPayload> {
 
 export const getDbPosts = () => {
   const { data, error, mutate } = useSWR(API_URL, getPosts)
-  console.log("data", data)
+  // console.log("data", data)
   return {
     dbPosts: data?.dbPosts,
     isLoading: !error && !data,
@@ -36,9 +36,13 @@ export const getDbPosts = () => {
 
 export const getDevtoPosts = async () => {
   const res = await fetch(
-    `${DEVTO_API_URL}/articles?username=${process.env.DEVTO_USERNAME}`
+    `https://dev.to/api/articles/me`, {
+    headers: {
+      "api-key": process.env.DEVTO_APIKEY,
+    },
+}
   )
-  // console.log("res",res)
+  console.log("res",res)
   if (res.status < 200 || res.status >= 300) {
     throw new Error(
       `Error fetching... Status code: ${res.status}, ${res.statusText}`
