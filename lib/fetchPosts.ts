@@ -18,10 +18,21 @@ type PostsPayload = {
 }
 
 async function getPosts(): Promise<PostsPayload> {
-  const res = await fetch(API_URL);
-  const data = await res.json();
-  return data;
+  try {
+    const res = await fetch(API_URL);
+    console.log("Response status:", res.status);
+    if (!res.ok) {
+      throw new Error(`Fetch failed with status ${res.status}`);
+    }
+    const data = await res.json();
+    console.log("Fetched data:", data);
+    return data;
+  } catch (error) {
+    console.error("Error fetching posts:", error);
+    throw error;
+  }
 }
+
 
 export const getDbPosts = () => {
   const { data, error, mutate } = useSWR(API_URL, getPosts)
