@@ -20,15 +20,15 @@ type PostsPayload = {
 async function getPosts(): Promise<PostsPayload> {
   try {
     const res = await fetch(API_URL);
-    console.log("Response status:", res.status);
+    // console.log("Response status:", res.status);
     if (!res.ok) {
       throw new Error(`Fetch failed with status ${res.status}`);
     }
     const data = await res.json();
-    console.log("Fetched data:", data);
+    // console.log("Fetched data:", data);
     return data;
   } catch (error) {
-    console.error("Error fetching posts:", error);
+    // console.error("Error fetching posts:", error);
     throw error;
   }
 }
@@ -36,8 +36,17 @@ async function getPosts(): Promise<PostsPayload> {
 
 export const getDbPosts = () => {
   const { data, error, mutate } = useSWR(API_URL, getPosts)
+  // if (data?.dbPosts) { 
+
+  //   console.log("data.dbPosts:", data.dbPosts);
+  // }
+  // else {
+  //   console.log("data.dbPosts is null");
+  // }
   return {
     dbPosts: data?.dbPosts,
+    
+    
     isLoading: !error && !data,
     isError: error,
   }

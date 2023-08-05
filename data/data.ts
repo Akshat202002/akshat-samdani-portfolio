@@ -211,17 +211,8 @@ export const skillsArray = [
 
 export const newContent = [
   {
-    link: '/blog/chakraui-templateskart-ui-updates',
-    text: 'ChakraUI TemplatesKart - UI updates',
+    link: '/blog/hello',
+    text: 'Hello from Akshat!',
     showNewTag: true
   },
-  {
-    link: '/blog/templateskart-free-chakra-ui-components-and-projects',
-    text: 'TemplatesKart | Free Chakra UI Components and Projects',
-    showNewTag: true
-  },
-  {
-    link: '/blog/started-2022-by-updating-portfolio-website-1jde-temp-slug-4553258',
-    text: 'Started 2022 by updating portfolio website'
-  }
 ];
