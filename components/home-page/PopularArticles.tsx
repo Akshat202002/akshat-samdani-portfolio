@@ -56,7 +56,6 @@ const PopularArticles: React.FC<BlogPostProps> = (props) => {
       <Header underlineColor={ORANGE} mt={0} mb={0}>
         Popular Articles
       </Header>
-      
       <SimpleGrid columns={1} spacing={4} mt={5} w="100%">
         {posts &&
           posts
@@ -87,7 +86,7 @@ const PopularArticles: React.FC<BlogPostProps> = (props) => {
                       align="left"
                     >
                       <HStack justifyContent="space-between" isInline>
-                        <Heading fontSize="lg" align="left" mt={0}>
+                        <Heading fontSize="lg" textAlign="left" mt={0}>
                           <NextLink href={`/blog/${slug}`} passHref>
                             <Text as={Link} color={linkColor}>
                               {title}
@@ -97,7 +96,7 @@ const PopularArticles: React.FC<BlogPostProps> = (props) => {
                         <HStack
                           spacing={2}
                           isInline
-                          d={['none', 'flex', 'flex']}
+                          display={['none', 'flex', 'flex']}
                         >
                           {positive_reactions_count ? (
                             <Flex alignItems="center">
@@ -142,7 +141,7 @@ const PopularArticles: React.FC<BlogPostProps> = (props) => {
                           <Tooltip hasArrow label="Reactions" placement="top">
                             <Flex
                               alignItems="center"
-                              d={['flex', 'none', 'none']}
+                              display={['flex', 'none', 'none']}
                             >
                               <DisplayText
                                 isLoading={isLoading}
@@ -162,7 +161,7 @@ const PopularArticles: React.FC<BlogPostProps> = (props) => {
                           <Tooltip hasArrow label="Comments" placement="top">
                             <Flex
                               alignItems="center"
-                              d={['flex', 'none', 'none']}
+                              display={['flex', 'none', 'none']}
                             >
                               <DisplayText
                                 isLoading={false}
