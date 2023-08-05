@@ -1,6 +1,6 @@
 import useSWR from 'swr';
 import { DEVTO_API_URL } from 'data/constants';
-import axios, { AxiosResponse } from 'axios';
+// import axios, { AxiosResponse } from 'axios';
 
 const API_URL = '/api/posts/';
 
