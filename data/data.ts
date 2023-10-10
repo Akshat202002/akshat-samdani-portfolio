@@ -42,25 +42,11 @@ export const institutes = [
 
 export const skillsArray = [
   {
-    name: 'Ruby on Rails',
-    description: 'Web development',
-    link: 'https://rubyonrails.org/',
-    type: 'development',
-    image: '/assets/images/skills/rails.png'
-  },
-  {
     name: 'React',
     description: 'Web development',
     link: 'https://reactjs.org/',
     type: 'development',
     image: '/assets/images/skills/react.png'
-  },
-  {
-    name: 'Ruby',
-    description: 'Web development, scrapping',
-    link: 'https://www.ruby-lang.org/en/',
-    type: 'development',
-    image: '/assets/images/skills/ruby.png'
   },
   {
     name: 'Python',
@@ -118,54 +104,33 @@ export const skillsArray = [
     type: 'database',
     image: '/assets/images/skills/mysql.png'
   },
-  {
-    name: 'Redis',
-    description: 'Database',
-    link: 'https://redis.io/',
-    type: 'database',
-    image: '/assets/images/skills/redis.png'
-  },
-  {
-    name: 'Heroku',
-    description: 'Devops',
-    link: 'https://www.heroku.com/',
-    type: 'devops',
-    image: '/assets/images/skills/heroku.png'
-  },
-  {
-    name: 'AWS',
-    description: 'Devops',
-    link: 'https://aws.amazon.com/',
-    type: 'devops',
-    image: 'assets/images/skills/aws.png'
-  },
-  {
-    name: 'Digital Ocean',
-    description: 'Devops',
-    link: 'https://www.digitalocean.com/',
-    type: 'devops',
-    image: '/assets/images/skills/digital-ocean.png'
-  },
-  {
-    name: 'Nginx',
-    description: 'Web server',
-    link: 'https://www.nginx.com/',
-    type: 'devops',
-    image: '/assets/images/skills/nginx.png'
-  },
+  // {
+  //   name: 'AWS',
+  //   description: 'Devops',
+  //   link: 'https://aws.amazon.com/',
+  //   type: 'devops',
+  //   image: 'assets/images/skills/aws.png'
+  // },
+  // {
+  //   name: 'Digital Ocean',
+  //   description: 'Devops',
+  //   link: 'https://www.digitalocean.com/',
+  //   type: 'devops',
+  //   image: '/assets/images/skills/digital-ocean.png'
+  // },
+  // {
+  //   name: 'Nginx',
+  //   description: 'Web server',
+  //   link: 'https://www.nginx.com/',
+  //   type: 'devops',
+  //   image: '/assets/images/skills/nginx.png'
+  // },
   {
     name: 'Visual Studio Code',
     description: 'Code editor of choice',
     link: 'https://code.visualstudio.com/',
     type: 'development',
     image: '/assets/images/skills/vscode.png'
-  },
-  {
-    name: 'Figma',
-    description: 'Collaborative Design',
-    link: 'https://www.figma.com/',
-    type: 'design',
-    image: '/assets/images/skills/figma.png'
   }
 ];
 
